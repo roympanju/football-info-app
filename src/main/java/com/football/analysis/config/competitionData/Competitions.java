@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Competitions {
     
     @JsonProperty("count")
-    public String count;
+    public int count;
 
     @JsonProperty("filters")
     public Filter filter;

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Competition {
     
     @JsonProperty("id")
-    public String id;
+    public int id;
 
     @JsonProperty("area")
     public Area area;

@@ -1,10 +1,10 @@
 package com.football.analysis.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
-@Component
 @ConfigurationProperties(prefix = "football-data-org-api")
+@EnableConfigurationProperties
 public class FootballDataOrgApiProperties {
     private String apiUrl;
     private String apiToken;

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Season {
     
     @JsonProperty("id")
-    public String id;
+    public int id;
 
     @JsonProperty("startDate")
     public String startDate;

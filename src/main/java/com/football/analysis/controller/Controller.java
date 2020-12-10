@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Cotroller {
+public class Controller {
 
     private final TeamsService competionTeams;
 
-    public Cotroller(TeamsService competionTeams) {
+    public Controller(TeamsService competionTeams) {
         this.competionTeams = competionTeams;
     }
 

@@ -13,8 +13,8 @@ import com.football.analysis.config.teamData.Teams;
 public class TeamsService {
     
     ObjectMapper mapper = new ObjectMapper();
-    Teams teams = new Teams();
-    CompetitionRequestConfig requestConfig = new CompetitionRequestConfig();
+    private Teams teams = new Teams();
+    private CompetitionRequestConfig requestConfig = new CompetitionRequestConfig();
 
     public List<String> teamsInCompetition(){
         try {

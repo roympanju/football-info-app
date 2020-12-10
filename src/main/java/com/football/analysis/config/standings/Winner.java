@@ -1,4 +1,4 @@
-package com.football.analysis.config.competitionData;
+package com.football.analysis.config.standings;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

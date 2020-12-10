@@ -1,6 +1,7 @@
 package com.football.analysis.config.competitionData;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.football.analysis.config.standings.Winner;
 
 public class Season {
     

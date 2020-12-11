@@ -1,6 +1,5 @@
-package com.football.analysis.config.competitionData;
+package com.football.analysis.config.requestConfig;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.io.IOException;

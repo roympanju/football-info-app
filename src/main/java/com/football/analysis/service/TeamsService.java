@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.football.analysis.config.competitionData.CompetitionRequestConfig;
+import com.football.analysis.config.requestConfig.CompetitionRequestConfig;
 import com.football.analysis.config.teamData.Team;
 import com.football.analysis.config.teamData.Teams;
 
@@ -18,10 +18,10 @@ public class TeamsService {
     private Teams teams = new Teams();
     private CompetitionRequestConfig requestConfig = new CompetitionRequestConfig();
 
-    public List<String> teamsInCompetition(String teamId, String compTeams){
+    public List<String> teamsInCompetition(String competitionId, String compTeams){
         try {
             //System.out.println(requestConfig.sendRequest());
-            teams = mapper.readValue(requestConfig.sendRequest(teamId, compTeams), Teams.class);
+            teams = mapper.readValue(requestConfig.sendRequest(competitionId, compTeams), Teams.class);
         }catch (IOException | InterruptedException e){
             System.out.println(e);
         }
@@ -34,5 +34,6 @@ public class TeamsService {
 
         return listOfCompetitionTeams;
     }
+
     
 }

@@ -21,7 +21,7 @@ public class CompetitionRequestConfig {
             .version(HttpClient.Version.HTTP_1_1)
             .connectTimeout(Duration.ofSeconds(10))
             .build();
-    @Bean
+    
     public String sendRequest (String competition, String teams) throws IOException, InterruptedException {
         httpRequest = HttpRequest.newBuilder()
                 .GET()

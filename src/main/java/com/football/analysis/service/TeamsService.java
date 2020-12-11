@@ -9,17 +9,19 @@ import com.football.analysis.config.competitionData.CompetitionRequestConfig;
 import com.football.analysis.config.teamData.Team;
 import com.football.analysis.config.teamData.Teams;
 
+import org.springframework.stereotype.Service;
 
+@Service
 public class TeamsService {
     
     ObjectMapper mapper = new ObjectMapper();
     private Teams teams = new Teams();
     private CompetitionRequestConfig requestConfig = new CompetitionRequestConfig();
 
-    public List<String> teamsInCompetition(){
+    public List<String> teamsInCompetition(String teamId, String compTeams){
         try {
             //System.out.println(requestConfig.sendRequest());
-            teams = mapper.readValue(requestConfig.sendRequest("PL", "teams"), Teams.class);
+            teams = mapper.readValue(requestConfig.sendRequest(teamId, compTeams), Teams.class);
         }catch (IOException | InterruptedException e){
             System.out.println(e);
         }

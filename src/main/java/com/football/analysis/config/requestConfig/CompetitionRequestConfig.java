@@ -1,4 +1,4 @@
-package com.football.analysis.config;
+package com.football.analysis.config.requestConfig;
 
 import org.springframework.context.annotation.Configuration;
 
@@ -9,8 +9,10 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 
+import com.football.analysis.config.FootballDataOrgApiProperties;
+
 @Configuration
-public class RequestConfig {
+public class CompetitionRequestConfig {
     HttpRequest httpRequest;
     FootballDataOrgApiProperties footballDataOrgApiProperties;
 
@@ -18,12 +20,12 @@ public class RequestConfig {
             .version(HttpClient.Version.HTTP_1_1)
             .connectTimeout(Duration.ofSeconds(10))
             .build();
-
-    public String sendRequest () throws IOException, InterruptedException {
+    
+    public String sendRequest (String competition, String teams) throws IOException, InterruptedException {
         httpRequest = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create("https://api.football-data.org/v2/competitions"))
-                .headers("X-Auth-Token", footballDataOrgApiProperties.getApiToken())
+                .uri(URI.create("https://api.football-data.org/v2/competitions/"+competition+"/"+teams))
+                .headers("X-Auth-Token", "916bb95a78914b058e52d29c9d6abae7")
                 .build();
 
         HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());

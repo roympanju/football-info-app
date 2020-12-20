@@ -5,17 +5,14 @@ import com.football.analysis.config.teamData.Team;
 
 public class Position {
 
-    @JsonProperty("position")
-    public String position;
-
     @JsonProperty("team")
     public Team team;
 
+    @JsonProperty("position")
+    public String position;
+
     @JsonProperty("playedGames")
     public int playedGames;
-
-    @JsonProperty("form")
-    public String form;
 
     @JsonProperty("won")
     public int won;
@@ -35,6 +32,9 @@ public class Position {
     @JsonProperty("goalsAgainst")
     public int goalsAgainst;
 
-    @JsonProperty("gaolDifference")
+    @JsonProperty("goalDifference")
     public int goalDifference;
+
+    @JsonProperty("form")
+    public String form;
 }

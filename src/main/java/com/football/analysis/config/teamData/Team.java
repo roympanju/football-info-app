@@ -1,8 +1,11 @@
 package com.football.analysis.config.teamData;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.football.analysis.config.competitionData.Area;
 
+@JsonInclude(Include.NON_NULL)
 public class Team {
 
     @JsonProperty("id")
@@ -45,7 +48,5 @@ public class Team {
     public String venue;
 
     @JsonProperty("lastUpdated")
-    public String lastUpdated;
-
-    
+    public String lastUpdated;   
 }

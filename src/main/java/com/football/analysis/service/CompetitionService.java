@@ -42,11 +42,11 @@ public class CompetitionService {
             System.out.println(e);
         }
         List<Position> competitionStanding = new ArrayList<Position>();
-        for(int i=0; i<standings.standings.size(); i++){
-            for (Position p: standings.standings.get(i).table){
-                competitionStanding.add(p);
-            }
+        //for(int i=0; i<standings.standings.size(); i++){
+        for (Position p: standings.standings.get(0).table){
+            competitionStanding.add(p);
         }
+        
         return competitionStanding;
     }
 }

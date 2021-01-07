@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.football.analysis.config.competitionData.Competition;
+import com.football.analysis.config.competitionData.Competitions;
 import com.football.analysis.config.requestConfig.CompetitionRequestConfig;
 import com.football.analysis.config.standings.Position;
 import com.football.analysis.config.standings.Standings;
@@ -20,6 +22,7 @@ public class CompetitionService {
     private Teams teams = new Teams();
     private Standings standings = new Standings();
     private CompetitionRequestConfig requestConfig = new CompetitionRequestConfig();
+    private Competitions competitions = new Competitions(); 
 
     public List<String> teamsInCompetition(String competitionId, String teamsRequest){
         try {
@@ -49,4 +52,22 @@ public class CompetitionService {
         
         return competitionStanding;
     }
+
+    public List<String> listOfAllCompetitions(){
+        try {
+            competitions = mapper.readValue(requestConfig.listCompetitionsRequest(), Competitions.class);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        List<String> competitionsList = new ArrayList<String>();
+        for (Competition comp: competitions.competitionList){
+            if (comp.plan.equals("TIER_ONE")){
+                competitionsList.add(comp.name);
+            }
+            
+        }
+
+        return competitionsList;
+    }
+    
 }

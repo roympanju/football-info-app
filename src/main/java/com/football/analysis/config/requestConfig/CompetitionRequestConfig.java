@@ -21,10 +21,10 @@ public class CompetitionRequestConfig {
             .connectTimeout(Duration.ofSeconds(10))
             .build();
     
-    public String sendRequest (String competition, String teams) throws IOException, InterruptedException {
+    public String sendCompetitionRequest (String competition, String request) throws IOException, InterruptedException {
         httpRequest = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create("https://api.football-data.org/v2/competitions/"+competition+"/"+teams))
+                .uri(URI.create("https://api.football-data.org/v2/competitions/"+competition+"/"+request))
                 .headers("X-Auth-Token", "916bb95a78914b058e52d29c9d6abae7")
                 .build();
 
